@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="var" path="JAVA5"/>
+	<classpathentry kind="lib" path="lib/cog-jglobus.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/cryptix32-signed.jar"/>
+	<classpathentry kind="lib" path="lib/cryptix-asn1-signed.jar"/>
+	<classpathentry kind="lib" path="lib/cryptix-signed.jar"/>
+	<classpathentry kind="lib" path="lib/filedrop.jar"/>
+	<classpathentry kind="lib" path="lib/jce-jdk13-135.jar"/>
+	<classpathentry kind="lib" path="lib/jlirc-unix-soc.jar"/>
+	<classpathentry kind="lib" path="lib/libbrowser.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.6.jar"/>
+	<classpathentry kind="lib" path="lib/openssh-pk-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/puretls-signed.jar"/>
+	<classpathentry kind="lib" path="lib/putty-pk-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Jun 20 10:56:55 GMT+02:00 2007
+onejar.license.required=true
+manifest.mainclass=com.sshtools.powua.Powua
+jarname=powervnc.jar
+manifest.removesigners=true
+onejar.checkbox=false
+manifest.mergeall=true
+manifest.classpath=
+manifest.file=<createnew>
+onejar.expand=
+excludes=
+jarname.isextern=false
+includes=
