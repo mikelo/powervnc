@@ -1,7 +1,7 @@
 #Fat Jar Configuration File
-#Wed Jun 20 10:56:55 GMT+02:00 2007
+#Tue Jun 26 17:46:44 GMT+02:00 2007
 onejar.license.required=true
-manifest.mainclass=com.sshtools.powua.Powua
+manifest.mainclass=com.sshtools.powervnc.PowerVNC
 jarname=powervnc.jar
 manifest.removesigners=true
 onejar.checkbox=false
