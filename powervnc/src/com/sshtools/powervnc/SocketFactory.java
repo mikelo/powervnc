@@ -16,7 +16,7 @@
 //  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
 //  USA.
 //
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 //
 // SocketFactory.java describes an interface used to substitute the

@@ -20,7 +20,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.awt.BorderLayout;
 import java.awt.Dialog;
@@ -52,7 +52,7 @@ import com.sshtools.j2ssh.SshException;
 class AuthenticationFrame
 	extends JPanel
     implements ActionListener {
-	private PowuaPanel grandparent;
+	private PowerVNCPanel grandparent;
 	private JPasswordField passwordField;
 	private String password; 
 	private JButton okButton;
@@ -75,12 +75,12 @@ class AuthenticationFrame
 	  profile = new SshToolsConnectionProfile();
 	  SpringLayout layout = new SpringLayout();
       setLayout(layout);
-      final ImageIcon imageIcon = new ResourceIcon("/com/sshtools/powua/login.png");
+      final ImageIcon imageIcon = new ResourceIcon("/com/sshtools/powervnc/login.png");
       image = imageIcon.getImage();
 	  setOpaque(false);
 /*
 	  JPanel p = new JPanel(layout) {
-          final ImageIcon imageIcon = new ResourceIcon("/com/sshtools/powua/login.png");
+          final ImageIcon imageIcon = new ResourceIcon("/com/sshtools/powervnc/login.png");
           Image image = imageIcon.getImage();
           {
         	  setOpaque(false);

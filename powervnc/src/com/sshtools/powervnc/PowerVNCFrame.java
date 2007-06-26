@@ -18,7 +18,7 @@
  *  License along with this program; if not, write to the Free Software
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -26,14 +26,14 @@ import org.apache.commons.logging.LogFactory;
 import com.sshtools.common.ui.ResourceIcon;
 import com.sshtools.common.ui.SshToolsApplicationFrame;
 
-public class PowuaFrame
+public class PowerVNCFrame
     extends SshToolsApplicationFrame {
   // Logger
-  protected static Log log = LogFactory.getLog(PowuaFrame.class);
+  protected static Log log = LogFactory.getLog(PowerVNCFrame.class);
 
-  public PowuaFrame() {
+  public PowerVNCFrame() {
     super();
-    setIconImage(new ResourceIcon("/com/sshtools/powua/sshvncframeicon.gif").
+    setIconImage(new ResourceIcon("/com/sshtools/powervnc/p.png").
                  getImage());
   }
 }

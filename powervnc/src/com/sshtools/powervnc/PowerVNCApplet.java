@@ -19,7 +19,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.io.IOException;
 
@@ -27,7 +27,7 @@ import com.sshtools.common.ui.SshToolsApplicationClientApplet;
 import com.sshtools.common.ui.SshToolsApplicationException;
 import com.sshtools.common.ui.SshToolsApplicationPanel;
 
-public class PowuaApplet
+public class PowerVNCApplet
     extends SshToolsApplicationClientApplet {
   //     eurgghh!
   public final static String[][] SSHVNC_PARAMETER_INFO = {
@@ -76,31 +76,31 @@ public class PowuaApplet
   public void buildProfile() throws IOException {
     super.buildProfile();
     doExtraParameters("sshvnc.connection.compressLevel",
-                      PowuaPanel.PROFILE_PROPERTY_COMPRESS_LEVEL);
+                      PowerVNCPanel.PROFILE_PROPERTY_COMPRESS_LEVEL);
     doExtraParameters("sshvnc.connection.cursorUpdates",
-                      PowuaPanel.PROFILE_PROPERTY_CURSOR_UPDATES);
+                      PowerVNCPanel.PROFILE_PROPERTY_CURSOR_UPDATES);
     doExtraParameters("sshvnc.connection.eightBitColors",
-                      PowuaPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS);
+                      PowerVNCPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS);
     doExtraParameters("sshvnc.connection.jpegQuality",
-                      PowuaPanel.PROFILE_PROPERTY_JPEG_QUALITY);
+                      PowerVNCPanel.PROFILE_PROPERTY_JPEG_QUALITY);
     doExtraParameters("sshvnc.connection.preferredEncoding",
-                      PowuaPanel.PROFILE_PROPERTY_PREFERRED_ENCODING);
+                      PowerVNCPanel.PROFILE_PROPERTY_PREFERRED_ENCODING);
     doExtraParameters("sshvnc.connection.reverseMouseButtons2And3",
-                      PowuaPanel.
+                      PowerVNCPanel.
                       PROFILE_PROPERTY_REVERSE_MOUSE_BUTTONS_2_AND_3);
     doExtraParameters("sshvnc.connection.shareDesktop",
-                      PowuaPanel.PROFILE_PROPERTY_SHARE_DESKTOP);
+                      PowerVNCPanel.PROFILE_PROPERTY_SHARE_DESKTOP);
     doExtraParameters("sshvnc.connection.useCopyRect",
-                      PowuaPanel.PROFILE_PROPERTY_USE_COPY_RECT);
+                      PowerVNCPanel.PROFILE_PROPERTY_USE_COPY_RECT);
     doExtraParameters("sshvnc.connection.viewOnly",
-                      PowuaPanel.PROFILE_PROPERTY_VIEW_ONLY);
+                      PowerVNCPanel.PROFILE_PROPERTY_VIEW_ONLY);
     doExtraParameters("sshvnc.connection.vncHostDisplay",
-                      PowuaPanel.PROFILE_PROPERTY_VNC_HOST + ":" +
-                      PowuaPanel.PROFILE_PROPERTY_VNC_DISPLAY);
+                      PowerVNCPanel.PROFILE_PROPERTY_VNC_HOST + ":" +
+                      PowerVNCPanel.PROFILE_PROPERTY_VNC_DISPLAY);
     doExtraParameters("sshvnc.connection.encryptedVncPassword",
-                      PowuaPanel.PROFILE_PROPERTY_ENCRYPTED_VNC_PASSWORD);
+                      PowerVNCPanel.PROFILE_PROPERTY_ENCRYPTED_VNC_PASSWORD);
     doExtraParameters("sshapps.connection.password",
-                      PowuaPanel.PROFILE_PROPERTY_SSH_PASSWORD);
+                      PowerVNCPanel.PROFILE_PROPERTY_SSH_PASSWORD);
   }
 
   public String getAppletInfo() {
@@ -118,12 +118,12 @@ public class PowuaApplet
 
   public SshToolsApplicationPanel createApplicationPanel() throws
       SshToolsApplicationException {
-    Powua term = new Powua();
+    PowerVNC term = new PowerVNC();
     SshToolsApplicationClientApplet.SshToolsApplicationAppletContainer
         container =
         new SshToolsApplicationClientApplet.SshToolsApplicationAppletContainer();
     term.newContainer(container);
-    PowuaPanel p = (PowuaPanel) container.getApplicationPanel();
+    PowerVNCPanel p = (PowerVNCPanel) container.getApplicationPanel();
     p.setFrameResizeable(false);
     return p;
   }

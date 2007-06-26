@@ -19,7 +19,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.awt.event.KeyEvent;
 
@@ -28,24 +28,24 @@ import javax.swing.KeyStroke;
 
 import com.sshtools.common.ui.StandardAction;
 
-public class CtrlAltDelAction
+public class ClipboardAction
     extends StandardAction {
 
-  public CtrlAltDelAction() {
-    putValue(Action.NAME, "Ctrl+Alt+Delete");
-    putValue(Action.SMALL_ICON, getIcon("/com/sshtools/sshvnc/ctrlaltdel.png"));
-    putValue(Action.SHORT_DESCRIPTION, "Send Ctrl+Alt+Delete");
-    putValue(Action.LONG_DESCRIPTION, "Send the Ctrl+Alt+Delete keys");
+  public ClipboardAction() {
+    putValue(Action.NAME, "Clipboard");
+    putValue(Action.SMALL_ICON, getIcon("/com/sshtools/sshvnc/clipboard.png"));
+    putValue(Action.SHORT_DESCRIPTION, "Show clipboard");
+    putValue(Action.LONG_DESCRIPTION, "Show the remote clipboard");
     putValue(Action.ACCELERATOR_KEY,
-             KeyStroke.getKeyStroke(KeyEvent.VK_Q, KeyEvent.ALT_MASK));
-    putValue(Action.MNEMONIC_KEY, new Integer('a'));
+             KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.ALT_MASK));
+    putValue(Action.MNEMONIC_KEY, new Integer('p'));
     putValue(StandardAction.ON_MENUBAR, new Boolean(true));
     putValue(StandardAction.MENU_NAME, "View");
     putValue(StandardAction.ON_MENUBAR, new Boolean(true));
     putValue(StandardAction.MENU_ITEM_GROUP, new Integer(20));
-    putValue(StandardAction.MENU_ITEM_WEIGHT, new Integer(15));
+    putValue(StandardAction.MENU_ITEM_WEIGHT, new Integer(25));
     putValue(StandardAction.ON_TOOLBAR, new Boolean(false));
     putValue(StandardAction.TOOLBAR_GROUP, new Integer(5));
-    putValue(StandardAction.TOOLBAR_WEIGHT, new Integer(25));
+    putValue(StandardAction.TOOLBAR_WEIGHT, new Integer(35));
   }
 }

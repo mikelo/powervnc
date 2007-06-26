@@ -93,7 +93,7 @@ import com.sshtools.j2ssh.transport.MessageStoreEOFException;
 import com.sshtools.j2ssh.transport.TransportProtocolException;
 import com.sshtools.j2ssh.transport.TransportProtocolState;
 import com.sshtools.j2ssh.transport.publickey.SshPublicKey;
-import com.sshtools.powua.Powua;
+import com.sshtools.powervnc.PowerVNC;
 
 /**
  *

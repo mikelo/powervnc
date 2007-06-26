@@ -36,7 +36,7 @@ import com.sshtools.j2ssh.authentication.SshAuthenticationClient;
 import com.sshtools.j2ssh.authentication.SshAuthenticationClientFactory;
 import com.sshtools.j2ssh.configuration.ConfigurationLoader;
 import com.sshtools.j2ssh.io.IOUtil;
-import com.sshtools.powua.Powua;
+import com.sshtools.powervnc.PowerVNC;
 
 /**
  *
@@ -150,7 +150,7 @@ public abstract class SshToolsApplicationClientApplet
         "false").equalsIgnoreCase("true");
     disableHostKeyVerification = getParameter(
         "sshapps.connection.disableHostKeyVerification",
-        Powua.disableHostKeyverification).equalsIgnoreCase("true");
+        PowerVNC.disableHostKeyverification).equalsIgnoreCase("true");
     buildProfile();
   }
 

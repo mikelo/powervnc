@@ -43,7 +43,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.sshtools.j2ssh.configuration.ConfigurationLoader;
-import com.sshtools.powua.Powua;
+import com.sshtools.powervnc.PowerVNC;
 import com.sun.org.apache.xerces.internal.impl.RevalidationHandler;
 
 /**
@@ -253,7 +253,7 @@ public class SshToolsApplicationFrame
 //        int width = Toolkit.getDefaultToolkit().getScreenSize().width;
 //        int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 //        setBounds(0, 0, screenSize.width, screenSize.height);
-        setSize(Powua.w, Powua.h);
+        setSize(PowerVNC.w, PowerVNC.h);
   	  System.out.println("eccomi");
 //                panel.setSize(Powua.w, Powua.h);
     }

@@ -20,7 +20,7 @@
 //  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
 //  USA.
 //
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.awt.AWTEvent;
 import java.awt.Color;
@@ -298,7 +298,7 @@ public class VncCanvas
 
     // If we are not setting the screen size explicitly then resize
     if (viewer.getScreenSizePolicy() ==
-        PowuaPanel.PROFILE_SCREEN_REMOTE_DESKTOP) {
+        PowerVNCPanel.PROFILE_SCREEN_REMOTE_DESKTOP) {
 
       System.out.print("*** Resizing to " + rfb.framebufferWidth + "," +
                        rfb.framebufferHeight);

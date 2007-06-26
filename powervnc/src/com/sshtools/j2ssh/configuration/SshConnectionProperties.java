@@ -34,7 +34,7 @@ import com.sshtools.j2ssh.transport.compression.SshCompressionFactory;
 import com.sshtools.j2ssh.transport.hmac.SshHmacFactory;
 import com.sshtools.j2ssh.transport.kex.SshKeyExchangeFactory;
 import com.sshtools.j2ssh.transport.publickey.SshKeyPairFactory;
-import com.sshtools.powua.Powua;
+import com.sshtools.powervnc.PowerVNC;
 
 /**
  *
@@ -73,7 +73,7 @@ public class SshConnectionProperties {
   protected String proxyPassword;
 
   /**  */
-  protected String host = Powua.HOST;
+  protected String host = PowerVNC.HOST;
 
   /**  */
   protected String prefDecryption = SshCipherFactory.getDefaultCipher();

@@ -18,7 +18,7 @@
 //  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
 //  USA.
 //
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 //
 // VncViewer.java - the VNC viewer applet.  This class mainly just sets up the
@@ -71,7 +71,7 @@ public class VNCMain
 	
 	private String[] mainArgs;
   private RfbProto rfb;
-  PowuaPanel parent;
+  PowerVNCPanel parent;
   private JScrollPane desktopScrollPane;
   private GridBagLayout gridbag;
   private VncCanvas vc;
@@ -93,12 +93,12 @@ public class VNCMain
   private int deferCursorUpdates;
   private int deferUpdateRequests;
   SshToolsApplicationPanel application;
-  private PowuaOptions options;
-  private PowuaOptions oldOptions;
+  private PowerVNCOptions options;
+  private PowerVNCOptions oldOptions;
   private AuthenticationFrame authFrame;
   private boolean frameResizeable;
   
-  public VNCMain(PowuaPanel par) {
+  public VNCMain(PowerVNCPanel par) {
 	  super();
 	  parent = par;
 	  frameResizeable = true;
@@ -107,7 +107,7 @@ public class VNCMain
 
   public boolean init(InputStream in, OutputStream out,
                       SshToolsApplicationPanel application,
-                      PowuaOptions options) throws Exception {
+                      PowerVNCOptions options) throws Exception {
 
 //	  System.out.println("aloha");
 	  this.options = options;
@@ -257,7 +257,7 @@ public class VNCMain
     return rfb;
   }
 
-  public PowuaOptions getOptions() {
+  public PowerVNCOptions getOptions() {
     return options;
   }
 
@@ -490,7 +490,7 @@ public class VNCMain
     synchronized (recordingSync) {
       if (!recordingActive) {
         try {
-          oldOptions = (PowuaOptions) options.clone();
+          oldOptions = (PowerVNCOptions) options.clone();
         }
         catch (Throwable t) {
 

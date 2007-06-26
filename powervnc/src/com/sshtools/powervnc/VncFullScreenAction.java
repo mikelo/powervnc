@@ -1,4 +1,4 @@
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 /*
  *  Sshtools - SSHTerm

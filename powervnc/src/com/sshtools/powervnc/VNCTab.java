@@ -20,7 +20,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -183,11 +183,11 @@ public class VNCTab
     this.profile = profile;
 
     String host = profile == null ? "" :
-        profile.getApplicationProperty(PowuaPanel.
+        profile.getApplicationProperty(PowerVNCPanel.
                                        PROFILE_PROPERTY_VNC_HOST, "");
 
     String portStr = profile == null ? "" :
-        profile.getApplicationProperty(PowuaPanel.
+        profile.getApplicationProperty(PowerVNCPanel.
                                        PROFILE_PROPERTY_VNC_DISPLAY, "");
 
     /*int os = profile == null ? 0 :
@@ -212,9 +212,9 @@ public class VNCTab
     vncHost.setText(host);
 
     if (profile != null) {
-      startCommand.setText(profile.getApplicationProperty(PowuaPanel.
+      startCommand.setText(profile.getApplicationProperty(PowerVNCPanel.
           PROFILE_PRE_VNC_COMMAND, ""));
-      stopCommand.setText(profile.getApplicationProperty(PowuaPanel.
+      stopCommand.setText(profile.getApplicationProperty(PowerVNCPanel.
           PROFILE_POST_VNC_COMMAND, ""));
     }
 
@@ -276,34 +276,34 @@ public class VNCTab
 
     profile.setApplicationProperty("sshvnc.configured", true);
 
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_VNC_HOST,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_VNC_HOST,
                                    vncHost.getText().equals("") ?
                                    "localhost" : vncHost.getText());
 
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_VNC_DISPLAY,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_VNC_DISPLAY,
                                    port.getText().equals("") ?
                                    "5900" : port.getText());
 
     if (nix.isSelected()) {
-      profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_VNC_SERVER_OS,
-                                     PowuaPanel.PROFILE_VNC_SERVER_OS_LINUX);
+      profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_VNC_SERVER_OS,
+                                     PowerVNCPanel.PROFILE_VNC_SERVER_OS_LINUX);
     }
     else if (windows.isSelected()) {
-      profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_VNC_SERVER_OS,
-                                     PowuaPanel.
+      profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_VNC_SERVER_OS,
+                                     PowerVNCPanel.
                                      PROFILE_VNC_SERVER_OS_WINDOWSMAC);
     }
 
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PRE_VNC_COMMAND,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PRE_VNC_COMMAND,
                                    startCommand.getText());
-    profile.setApplicationProperty(PowuaPanel.PROFILE_POST_VNC_COMMAND,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_POST_VNC_COMMAND,
                                    stopCommand.getText());
 
-    profile.setApplicationProperty(PowuaPanel.
+    profile.setApplicationProperty(PowerVNCPanel.
                                    PROFILE_PROPERTY_SCREEN_SIZE_POLICY,
                                    jChkScreenSize.isSelected() ?
-                                   PowuaPanel.PROFILE_SCREEN_REMOTE_DESKTOP
-                                   : PowuaPanel.PROFILE_SCREEN_NO_CHANGE);
+                                   PowerVNCPanel.PROFILE_SCREEN_REMOTE_DESKTOP
+                                   : PowerVNCPanel.PROFILE_SCREEN_NO_CHANGE);
 
   }
 

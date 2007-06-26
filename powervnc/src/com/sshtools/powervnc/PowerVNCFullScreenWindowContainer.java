@@ -1,5 +1,5 @@
 //Changes (c) STFC/CCLRC 2007
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 /*
  *  Sshtools - SSHTerm
@@ -49,7 +49,7 @@ import com.sshtools.common.ui.SshToolsApplicationFrame;
 import com.sshtools.common.ui.SshToolsApplicationPanel;
 import com.sshtools.common.ui.StandardAction;
 
-public class PowuaFullScreenWindowContainer
+public class PowerVNCFullScreenWindowContainer
     extends JFrame
     implements SshToolsApplicationContainer {
 
@@ -74,9 +74,9 @@ public class PowuaFullScreenWindowContainer
     //setUndecorated(true);
     this.panel = panel;
     this.application = application;
-    setJMenuBar( ( (PowuaPanel) panel).getJMenuBar());
+    setJMenuBar( ( (PowerVNCPanel) panel).getJMenuBar());
     // We dont want the status bar, menu bar or tool bar showing in full screen mode by default
-    ( (PowuaPanel) panel).setToolsVisible(false);
+    ( (PowerVNCPanel) panel).setToolsVisible(false);
     panel.registerActionMenu(new SshToolsApplicationPanel.ActionMenu(
         "File", "File", 'f', 0));
     panel.registerAction(exitAction = new ExitAction(application, this));
@@ -111,7 +111,7 @@ public class PowuaFullScreenWindowContainer
     // Watch for the frame closing
     addWindowListener(new WindowAdapter() {
       public void windowClosing(WindowEvent evt) {
-        application.closeContainer(PowuaFullScreenWindowContainer.this);
+        application.closeContainer(PowerVNCFullScreenWindowContainer.this);
       }
     });
     getContentPane().validate();

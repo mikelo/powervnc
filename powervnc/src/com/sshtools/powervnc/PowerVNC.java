@@ -19,7 +19,7 @@
  *  License along with this program; if not, write to the Free Software
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,10 +36,9 @@ import com.sshtools.common.ui.SshToolsApplication;
 import com.sshtools.j2ssh.configuration.ConfigurationLoader;
 
 
-public class Powua
+public class PowerVNC
     extends SshToolsApplication {
 
-//	public final static String HOST = "got.powua.com";
 	public final static int w = 561;
 	public final static int h = 328;
 	public final static String HOST = "192.168.1.3";
@@ -50,12 +49,12 @@ public class Powua
   static {
     String val = ConfigurationLoader.checkAndGetProperty("user.home", null);
     if (val != null) {
-      PREF_DIR = new File(val + File.separator + ".powua");
+      PREF_DIR = new File(val + File.separator + ".powerVNC");
     }
   }
 
-  public Powua() {
-    super(PowuaPanel.class, PowuaFrame.class);
+  public PowerVNC() {
+    super(PowerVNCPanel.class, PowerVNCFrame.class);
   }
 
   public File getApplicationPreferencesDirectory() {
@@ -63,7 +62,7 @@ public class Powua
   }
 
   public String getApplicationName() {
-    return "Powua Client";
+    return "PowerVNC Client";
   }
 
   public String getApplicationVersion() {
@@ -71,7 +70,7 @@ public class Powua
   }
 
   public Icon getApplicationLargeIcon() {
-    return new ResourceIcon("/com/sshtools/shift/w.png");
+    return new ResourceIcon("/com/sshtools/powervnc/p.png");
   }
 
   public OptionsTab[] getAdditionalOptionTabs() {
@@ -79,11 +78,11 @@ public class Powua
   }
 
   public String getAboutLicenseDetails() {
-    return "Copyright Xteque S.r.l.\nPowua Client is Licensed under the GPL (http://www.gnu.org/licenses)\n";
+    return "PowerVNC Client is Licensed under the GPL (http://www.gnu.org/licenses)\n";
   }
 
   public String getAboutURL() {
-    return "http://www.xteque.com";
+    return "http://sourceforge.net/projects/powervnc/";
   }
 
   public String getAboutAuthors() {
@@ -125,7 +124,7 @@ public class Powua
       context.setAutomationConfigurationResource("automation.xml");
       context.setFailOnError(false);
       ConfigurationLoader.initialize(false, context);
-      Powua powua = new Powua();
+      PowerVNC powua = new PowerVNC();
       powua.init(args);
       powua.newContainer();
     }

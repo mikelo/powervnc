@@ -19,7 +19,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -112,49 +112,49 @@ public class VNCAdvancedTab
                                bandwidth.getSelectedItem().toString() + ".opt");
 
           // Get the preferred encoding setting
-          profile.setApplicationProperty(PowuaPanel.
+          profile.setApplicationProperty(PowerVNCPanel.
                                          PROFILE_PROPERTY_PREFERRED_ENCODING,
                                          settingsprofile.getApplicationProperty(
-              PowuaPanel.PROFILE_PROPERTY_PREFERRED_ENCODING, null));
+              PowerVNCPanel.PROFILE_PROPERTY_PREFERRED_ENCODING, null));
 
           encoding.setSelectedIndex(settingsprofile.getApplicationPropertyInt(
-              PowuaPanel.PROFILE_PROPERTY_PREFERRED_ENCODING, 1));
+              PowerVNCPanel.PROFILE_PROPERTY_PREFERRED_ENCODING, 1));
 
           // Get the compression level setting
-          profile.setApplicationProperty(PowuaPanel.
+          profile.setApplicationProperty(PowerVNCPanel.
                                          PROFILE_PROPERTY_COMPRESS_LEVEL,
                                          settingsprofile.getApplicationProperty(
-              PowuaPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, null));
+              PowerVNCPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, null));
 
           compressionLevel.setSelectedIndex(settingsprofile.
                                             getApplicationPropertyInt(
-              PowuaPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, 1));
+              PowerVNCPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, 1));
 
           // Get the JPEG quality setting
-          profile.setApplicationProperty(PowuaPanel.
+          profile.setApplicationProperty(PowerVNCPanel.
                                          PROFILE_PROPERTY_JPEG_QUALITY,
                                          settingsprofile.getApplicationProperty(
-              PowuaPanel.PROFILE_PROPERTY_JPEG_QUALITY, null));
+              PowerVNCPanel.PROFILE_PROPERTY_JPEG_QUALITY, null));
           jpegQuality.setSelectedIndex(settingsprofile.
                                        getApplicationPropertyInt(
-              PowuaPanel.PROFILE_PROPERTY_JPEG_QUALITY, 1) + 1);
+              PowerVNCPanel.PROFILE_PROPERTY_JPEG_QUALITY, 1) + 1);
 
           // Get the 8bit color setting
-          profile.setApplicationProperty(PowuaPanel.
+          profile.setApplicationProperty(PowerVNCPanel.
                                          PROFILE_PROPERTY_EIGHT_BIT_COLORS,
                                          settingsprofile.getApplicationProperty(
-              PowuaPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, null));
+              PowerVNCPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, null));
           restrictedColors.setSelected(settingsprofile.
                                        getApplicationPropertyBoolean(
-              PowuaPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, false));
+              PowerVNCPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, false));
 
           // Get the use copyrect setting
-          profile.setApplicationProperty(PowuaPanel.
+          profile.setApplicationProperty(PowerVNCPanel.
                                          PROFILE_PROPERTY_USE_COPY_RECT,
                                          settingsprofile.getApplicationProperty(
-              PowuaPanel.PROFILE_PROPERTY_USE_COPY_RECT, null));
+              PowerVNCPanel.PROFILE_PROPERTY_USE_COPY_RECT, null));
           useCopyRect.setSelected(settingsprofile.getApplicationPropertyBoolean(
-              PowuaPanel.PROFILE_PROPERTY_USE_COPY_RECT, false));
+              PowerVNCPanel.PROFILE_PROPERTY_USE_COPY_RECT, false));
 
           setAvailableActions();
         }
@@ -266,7 +266,7 @@ public class VNCAdvancedTab
 
     if (profile != null) {
       int idx = profile == null ? RfbProto.EncodingTight :
-          profile.getApplicationPropertyInt(PowuaPanel.
+          profile.getApplicationPropertyInt(PowerVNCPanel.
                                             PROFILE_PROPERTY_PREFERRED_ENCODING,
                                             RfbProto.EncodingTight);
       switch (idx) {
@@ -291,30 +291,30 @@ public class VNCAdvancedTab
       }
       useCopyRect.setSelected(profile == null ? true :
                               profile.getApplicationPropertyBoolean(
-          PowuaPanel.PROFILE_PROPERTY_USE_COPY_RECT, true));
+          PowerVNCPanel.PROFILE_PROPERTY_USE_COPY_RECT, true));
       compressionLevel.setSelectedIndex(profile == null ? 0 :
                                         profile.getApplicationPropertyInt(
-          PowuaPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, 0));
+          PowerVNCPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, 0));
       jpegQuality.setSelectedIndex(profile == null ? 7 :
                                    profile.getApplicationPropertyInt(
-          PowuaPanel.PROFILE_PROPERTY_JPEG_QUALITY, 7));
+          PowerVNCPanel.PROFILE_PROPERTY_JPEG_QUALITY, 7));
       cursorUpdates.setSelectedIndex(profile == null ? 0 :
                                      profile.getApplicationPropertyInt(
-          PowuaPanel.PROFILE_PROPERTY_CURSOR_UPDATES, 0));
+          PowerVNCPanel.PROFILE_PROPERTY_CURSOR_UPDATES, 0));
 
       restrictedColors.setSelected(profile == null ? false :
                                    profile.getApplicationPropertyBoolean(
-          PowuaPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, false));
+          PowerVNCPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, false));
       reverseMouseButtons2And3.setSelected(profile == null ? false :
                                            profile.
                                            getApplicationPropertyBoolean(
-          PowuaPanel.PROFILE_PROPERTY_REVERSE_MOUSE_BUTTONS_2_AND_3, false));
+          PowerVNCPanel.PROFILE_PROPERTY_REVERSE_MOUSE_BUTTONS_2_AND_3, false));
       viewOnly.setSelected(profile == null ? false :
                            profile.getApplicationPropertyBoolean(
-          PowuaPanel.PROFILE_PROPERTY_VIEW_ONLY, false));
+          PowerVNCPanel.PROFILE_PROPERTY_VIEW_ONLY, false));
       shareDesktop.setSelected(profile == null ? false :
                                profile.getApplicationPropertyBoolean(
-          PowuaPanel.PROFILE_PROPERTY_SHARE_DESKTOP, false));
+          PowerVNCPanel.PROFILE_PROPERTY_SHARE_DESKTOP, false));
 
     }
 
@@ -387,26 +387,26 @@ public class VNCAdvancedTab
         idx = RfbProto.EncodingTight;
         break;
     }
-    profile.setApplicationProperty(PowuaPanel.
+    profile.setApplicationProperty(PowerVNCPanel.
                                    PROFILE_PROPERTY_PREFERRED_ENCODING, idx);
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_USE_COPY_RECT,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_USE_COPY_RECT,
                                    useCopyRect.isSelected());
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_COMPRESS_LEVEL,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_COMPRESS_LEVEL,
                                    compressionLevel.getSelectedIndex());
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_JPEG_QUALITY,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_JPEG_QUALITY,
                                    jpegQuality.getSelectedIndex());
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_CURSOR_UPDATES,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_CURSOR_UPDATES,
                                    cursorUpdates.getSelectedIndex());
-    profile.setApplicationProperty(PowuaPanel.
+    profile.setApplicationProperty(PowerVNCPanel.
                                    PROFILE_PROPERTY_EIGHT_BIT_COLORS,
                                    restrictedColors.isSelected());
 
-    profile.setApplicationProperty(PowuaPanel.
+    profile.setApplicationProperty(PowerVNCPanel.
         PROFILE_PROPERTY_REVERSE_MOUSE_BUTTONS_2_AND_3,
         reverseMouseButtons2And3.isSelected());
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_VIEW_ONLY,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_VIEW_ONLY,
                                    viewOnly.isSelected());
-    profile.setApplicationProperty(PowuaPanel.PROFILE_PROPERTY_SHARE_DESKTOP,
+    profile.setApplicationProperty(PowerVNCPanel.PROFILE_PROPERTY_SHARE_DESKTOP,
                                    shareDesktop.isSelected());
 
   }

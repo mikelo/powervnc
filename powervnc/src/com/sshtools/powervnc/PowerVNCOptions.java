@@ -19,11 +19,11 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import com.sshtools.common.configuration.SshToolsConnectionProfile;
 
-public class PowuaOptions
+public class PowerVNCOptions
     implements Cloneable {
   private int[] encodings = new int[20];
   private int nEncodings;
@@ -41,11 +41,11 @@ public class PowuaOptions
   private boolean shareDesktop;
   private String encryptedPassword;
 
-  public PowuaOptions() {
+  public PowerVNCOptions() {
     this(null);
   }
 
-  public PowuaOptions(SshToolsConnectionProfile profile) {
+  public PowerVNCOptions(SshToolsConnectionProfile profile) {
     setFromProfile(profile);
   }
 
@@ -180,31 +180,31 @@ public class PowuaOptions
   public void setFromProfile(SshToolsConnectionProfile profile) {
     preferredEncoding = profile == null ? RfbProto.EncodingTight :
         profile.getApplicationPropertyInt(
-        PowuaPanel.PROFILE_PROPERTY_PREFERRED_ENCODING, RfbProto.EncodingTight);
+        PowerVNCPanel.PROFILE_PROPERTY_PREFERRED_ENCODING, RfbProto.EncodingTight);
     useCopyRect = profile == null ? true :
         profile.getApplicationPropertyBoolean(
-        PowuaPanel.PROFILE_PROPERTY_USE_COPY_RECT, true);
+        PowerVNCPanel.PROFILE_PROPERTY_USE_COPY_RECT, true);
     compressLevel = profile == null ? 0 : profile.getApplicationPropertyInt(
-        PowuaPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, 0);
+        PowerVNCPanel.PROFILE_PROPERTY_COMPRESS_LEVEL, 0);
     jpegQuality = profile == null ? 7 : profile.getApplicationPropertyInt(
-        PowuaPanel.PROFILE_PROPERTY_JPEG_QUALITY, 7);
+        PowerVNCPanel.PROFILE_PROPERTY_JPEG_QUALITY, 7);
     cursorUpdates = profile == null ? 0 : profile.getApplicationPropertyInt(
-        PowuaPanel.PROFILE_PROPERTY_CURSOR_UPDATES, 0);
+        PowerVNCPanel.PROFILE_PROPERTY_CURSOR_UPDATES, 0);
     screenSizePolicy = profile == null ? 0 : profile.getApplicationPropertyInt(
-        PowuaPanel.PROFILE_PROPERTY_SCREEN_SIZE_POLICY, 0);
+        PowerVNCPanel.PROFILE_PROPERTY_SCREEN_SIZE_POLICY, 0);
     eightBitColors = profile == null ? false :
         profile.getApplicationPropertyBoolean(
-        PowuaPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, false);
+        PowerVNCPanel.PROFILE_PROPERTY_EIGHT_BIT_COLORS, false);
     reverseMouseButtons2And3 = profile == null ? false :
         profile.getApplicationPropertyBoolean(
-        PowuaPanel.PROFILE_PROPERTY_REVERSE_MOUSE_BUTTONS_2_AND_3, false);
+        PowerVNCPanel.PROFILE_PROPERTY_REVERSE_MOUSE_BUTTONS_2_AND_3, false);
     viewOnly = profile == null ? false : profile.getApplicationPropertyBoolean(
-        PowuaPanel.PROFILE_PROPERTY_VIEW_ONLY, false);
+        PowerVNCPanel.PROFILE_PROPERTY_VIEW_ONLY, false);
     shareDesktop = profile == null ? false :
         profile.getApplicationPropertyBoolean(
-        PowuaPanel.PROFILE_PROPERTY_SHARE_DESKTOP, false);
+        PowerVNCPanel.PROFILE_PROPERTY_SHARE_DESKTOP, false);
     encryptedPassword = profile == null ? "" :
-        profile.getApplicationProperty(PowuaPanel.
+        profile.getApplicationProperty(PowerVNCPanel.
                                        PROFILE_PROPERTY_ENCRYPTED_VNC_PASSWORD,
                                        "");
 
@@ -213,7 +213,7 @@ public class PowuaOptions
   }
 
   public Object clone() {
-    PowuaOptions opt = new PowuaOptions();
+    PowerVNCOptions opt = new PowerVNCOptions();
 
     opt.encodings = encodings;
     opt.nEncodings = nEncodings;

@@ -20,7 +20,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-package com.sshtools.powua;
+package com.sshtools.powervnc;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -106,7 +106,7 @@ import com.sshtools.j2ssh.session.SessionChannelClient;
 import com.sshtools.sshterm.emulation.TerminalEmulation;
 import com.sshtools.sshterm.emulation.TerminalPanel;
 
-public class PowuaPanel
+public class PowerVNCPanel
 
     extends SshToolsApplicationClientPanel
 
@@ -182,7 +182,7 @@ public class PowuaPanel
 
   // Logger
 
-  protected static Log log = LogFactory.getLog(Powua.class);
+  protected static Log log = LogFactory.getLog(PowerVNC.class);
 
   //  Private instance variables
 
@@ -236,7 +236,7 @@ public class PowuaPanel
 
   private boolean fullScreenMode;
 
-  public static final ResourceIcon SSHVNC_ICON = new ResourceIcon(PowuaPanel.class,
+  public static final ResourceIcon SSHVNC_ICON = new ResourceIcon(PowerVNCPanel.class,
 
       "sshvncframeicon.gif");
 
@@ -433,7 +433,7 @@ public class PowuaPanel
 
       OutputStream out,
 
-      PowuaOptions options) {
+      PowerVNCOptions options) {
 
     log.info("Initialising VNC");
 
@@ -563,7 +563,7 @@ public class PowuaPanel
     // Get password from profile, if any ppp
 
     String profPw = getCurrentConnectionProfile().getApplicationProperty(
-        PowuaPanel.PROFILE_PROPERTY_SSH_PASSWORD, "");
+        PowerVNCPanel.PROFILE_PROPERTY_SSH_PASSWORD, "");
 
     if (!profPw.equals("")) {
 
@@ -584,7 +584,7 @@ public class PowuaPanel
 
           (Frame) SwingUtilities.getAncestorOfClass(
 
-          Frame.class, PowuaPanel.this));
+          Frame.class, PowerVNCPanel.this));
 
       instance.setAuthenticationPrompt(dialog);
 
@@ -594,7 +594,7 @@ public class PowuaPanel
 
       PasswordChange.getInstance().setParentComponent(
 
-          PowuaPanel.this);
+          PowerVNCPanel.this);
 
     }
 
@@ -602,7 +602,7 @@ public class PowuaPanel
 
       PublicKeyAuthenticationPrompt prompt = new PublicKeyAuthenticationPrompt(
 
-          PowuaPanel.this);
+          PowerVNCPanel.this);
 
       instance.setAuthenticationPrompt(prompt);
 
@@ -618,7 +618,7 @@ public class PowuaPanel
 
           (Frame) SwingUtilities.getAncestorOfClass(
 
-          Frame.class, PowuaPanel.this)));
+          Frame.class, PowerVNCPanel.this)));
 
     }
 
@@ -648,7 +648,7 @@ public class PowuaPanel
         "5900");
 */
 //    String host = "192.168.0.3";
-    String port = Powua.DISPLAY;
+    String port = PowerVNC.DISPLAY;
     
 
     final VNCDisplay display = new VNCDisplay(host + ":" + port, 5900);
@@ -722,9 +722,9 @@ public class PowuaPanel
 
     }
 
-    final PowuaOptions options =
+    final PowerVNCOptions options =
 
-        new PowuaOptions(getCurrentConnectionProfile());
+        new PowerVNCOptions(getCurrentConnectionProfile());
 
     statusBar.setStatusText("Initialising VNC");
 
@@ -817,7 +817,7 @@ public class PowuaPanel
 
             JOptionPane.showMessageDialog(
 
-                PowuaPanel.this,
+                PowerVNCPanel.this,
 
                 "Powua failed to open a forwarding channel to "
 
@@ -952,7 +952,7 @@ public class PowuaPanel
 
           closeConnection(true);
 
-          showErrorMessage(PowuaPanel.this, "Error", ioe);
+          showErrorMessage(PowerVNCPanel.this, "Error", ioe);
 
         }
 
