@@ -418,7 +418,7 @@ public class JFtp extends JPanel implements WindowListener, ComponentListener,
         }
 
         Settings.save();
-        safeDisconnect();
+//        safeDisconnect();
 
         if(Settings.isStandalone)
         {
